@@ -2,41 +2,58 @@ name: MLOps CI/CD Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   train-and-test:
     runs-on: ubuntu-latest
-    
+
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-    
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-    
-    - name: Set up Python
-      uses: actions/setup-python@v6
-      with:
-        python-version: '3.11'
-    
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    
-    - name: Train model
-      run: |
-        python src/training/train.py
-    
-    - name: Test model exists
-      run: |
-        python -c "import joblib; model = joblib.load('models/best_churn_model.pkl'); print('✅ Model loaded successfully')"
-    
-    - name: Upload model
-      uses: actions/upload-artifact@v4
-      with:
-        name: churn-model
-        path: models/best_churn_model.pkl
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Verify Python version
+        run: python --version
+
+      - name: Upgrade pip
+        run: python -m pip install --upgrade pip
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Create models directory
+        run: |
+          mkdir -p models
+
+      - name: Train model
+        run: |
+          python src/training/train.py
+
+      - name: Verify model file exists
+        run: |
+          ls -la models/
+          test -f models/best_churn_model.pkl
+
+      - name: Test model loading
+        run: |
+          python -c "import joblib; model = joblib.load('models/best_churn_model.pkl'); print('Model loaded successfully')"
+
+      - name: Upload model artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: churn-model
+          path: models/best_churn_model.pkl
