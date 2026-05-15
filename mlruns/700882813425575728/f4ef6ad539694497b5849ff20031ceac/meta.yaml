@@ -1,0 +1,14 @@
+artifact_uri: file:C:/Users/lenovo/Desktop/project mlops/mlruns/700882813425575728/f4ef6ad539694497b5849ff20031ceac/artifacts
+end_time: 1778826280699
+entry_point_name: ''
+experiment_id: '700882813425575728'
+lifecycle_stage: active
+run_id: f4ef6ad539694497b5849ff20031ceac
+run_name: Logistic Regression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1778826268008
+status: 3
+tags: []
+user_id: lenovo

@@ -1,0 +1,8 @@
+artifact_location: file:C:/Users/lenovo/Desktop/project mlops/mlruns/700882813425575728
+creation_time: 1778826240917
+experiment_id: '700882813425575728'
+last_update_time: 1778826240917
+lifecycle_stage: active
+name: churn_prediction
+trace_location: null
+workspace: default

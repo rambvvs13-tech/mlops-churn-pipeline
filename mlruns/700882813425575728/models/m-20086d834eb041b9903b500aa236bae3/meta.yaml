@@ -1,0 +1,10 @@
+artifact_location: file:C:/Users/lenovo/Desktop/project mlops/mlruns/700882813425575728/models/m-20086d834eb041b9903b500aa236bae3/artifacts
+creation_timestamp: 1778826243953
+experiment_id: '700882813425575728'
+last_updated_timestamp: 1778826267881
+model_id: m-20086d834eb041b9903b500aa236bae3
+model_type: null
+name: random_forest
+source_run_id: 9ff6e2549a774b21a0394a443634076f
+status: 2
+status_message: null

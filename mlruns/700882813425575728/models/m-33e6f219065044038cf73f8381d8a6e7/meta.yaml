@@ -1,0 +1,10 @@
+artifact_location: file:C:/Users/lenovo/Desktop/project mlops/mlruns/700882813425575728/models/m-33e6f219065044038cf73f8381d8a6e7/artifacts
+creation_timestamp: 1778826268500
+experiment_id: '700882813425575728'
+last_updated_timestamp: 1778826280667
+model_id: m-33e6f219065044038cf73f8381d8a6e7
+model_type: null
+name: logistic_regression
+source_run_id: f4ef6ad539694497b5849ff20031ceac
+status: 2
+status_message: null
